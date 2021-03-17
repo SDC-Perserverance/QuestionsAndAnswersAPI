@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "server-dev": "nodemon server.js "
+    "server-dev": "nodemon server.js ",
+    "mini-server": "nodemon Etl.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,8 @@
   },
   "homepage": "https://github.com/SDC-Perserverance/QuestionsAndAnswersAPI#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.12.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
