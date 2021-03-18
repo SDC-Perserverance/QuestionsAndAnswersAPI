@@ -10,8 +10,6 @@ QnA.use(bodyParser.json());
 QnA.get('/', (req, res) => {
   res.send('Welcome to QnA express server');
 });
-
-
 // Listening to server
 QnA.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
