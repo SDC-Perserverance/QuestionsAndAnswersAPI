@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "server-dev": "nodemon server.js ",
-    "mini-server": "nodemon Etl.js"
+    "server-dev": "nodemon server.js "
   },
   "repository": {
     "type": "git",
