@@ -8,6 +8,8 @@ const getQRouter = require('./Routes/GetQuestions.js');
 const getARouter = require('./Routes/GetAnswers.js');
 const postQRouter = require('./Routes/PostQuestion.js');
 const postARouter = require('./Routes/PostAnswer.js');
+const helpfulQRouter = require('./Routes/HelpfulQuestion.js');
+const reportQRouter = require('./Routes/ReportQuestion.js');
 // Server config
 const QnA =  express();
 const PORT = 3015;
@@ -21,7 +23,8 @@ QnA.use('/', getARouter);
 QnA.use('/', postQRouter);
 QnA.use('/', postARouter);
 // PUT
-
+QnA.use('/', helpfulQRouter);
+QnA.use('/', reportQRouter);
 
 mongoose.connect(url, { useUnifiedTopology: true, useNewUrlParser: true });
 const connection = mongoose.connection;
