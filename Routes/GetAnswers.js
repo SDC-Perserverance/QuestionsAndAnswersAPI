@@ -1,6 +1,6 @@
 const express = require('express');
 const answerRouter = express.Router();
-const Answers = require('../models/Answers.js')
+const Answers = require('../Models/Answers.js')
 
 answerRouter.get('/qa/:questionId/answers', async(req, res) => {
   let questionId = req.params.questionId;

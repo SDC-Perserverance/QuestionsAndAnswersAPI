@@ -4,8 +4,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const fs = require('fs');
 // Helpers
-const getQRouter = require('./queries/GetQuestions.js');
-const getARouter = require('./queries/GetAnswers.js');
+const getQRouter = require('./Routes/GetQuestions.js');
+const getARouter = require('./Routes/GetAnswers.js');
 // Server config
 const QnA =  express();
 const PORT = 3015;
