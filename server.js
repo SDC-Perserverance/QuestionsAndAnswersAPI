@@ -7,15 +7,21 @@ const fs = require('fs');
 const getQRouter = require('./Routes/GetQuestions.js');
 const getARouter = require('./Routes/GetAnswers.js');
 const postQRouter = require('./Routes/PostQuestion.js');
+const postARouter = require('./Routes/PostAnswer.js');
 // Server config
 const QnA =  express();
 const PORT = 3015;
 const url = 'mongodb://localhost/SDCdb';
 
 QnA.use(bodyParser.json());
+// GET
 QnA.use('/', getQRouter);
 QnA.use('/', getARouter);
+// POST
 QnA.use('/', postQRouter);
+QnA.use('/', postARouter);
+// PUT
+
 
 mongoose.connect(url, { useUnifiedTopology: true, useNewUrlParser: true });
 const connection = mongoose.connection;
