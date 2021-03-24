@@ -3,7 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const fs = require('fs');
-// Helpers
+// Import route modules
 const getQRouter = require('./Routes/GetQuestions.js');
 const getARouter = require('./Routes/GetAnswers.js');
 const postQRouter = require('./Routes/PostQuestion.js');
@@ -18,6 +18,7 @@ const PORT = 3015;
 const url = 'mongodb://localhost/SDCdb';
 
 QnA.use(bodyParser.json());
+// Allow server to use the various routes
 // GET
 QnA.use('/', getQRouter);
 QnA.use('/', getARouter);
