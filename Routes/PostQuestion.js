@@ -3,7 +3,7 @@ const postQuestionRouter = express.Router();
 const Question = require('../Models/Questions.js');
 
 postQuestionRouter.post('/qa/:productId', async(req, res) => {
-  // configure date into correct format and assign below
+
   let currentDate = new Date();
   let yyyy = currentDate.getFullYear();
   let mm = String(currentDate.getMonth() + 1).padStart(2, '0');
@@ -18,7 +18,7 @@ postQuestionRouter.post('/qa/:productId', async(req, res) => {
   let askerEmail = req.body.email;
   let reports = 0;
   let helpful = 0;
-  // generate new question using model
+
   const question = new Question({
     id: questionId + 1,
     productId: productId,
@@ -29,7 +29,7 @@ postQuestionRouter.post('/qa/:productId', async(req, res) => {
     reports: reports,
     helpful: helpful
   });
-  // save question
+  
   try {
     await question.save();
     res.send('Question submitted!');

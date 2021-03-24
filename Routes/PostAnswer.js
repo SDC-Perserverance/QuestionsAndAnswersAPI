@@ -3,13 +3,12 @@ const postAnswerRouter = express.Router();
 const Answers = require('../Models/Answers.js')
 
 postAnswerRouter.post('/qa/:questionId/answers', async(req, res) => {
-  // format any data if needed
   let currentDate = new Date();
   let yyyy = currentDate.getFullYear();
   let mm = String(currentDate.getMonth() + 1).padStart(2, '0');
   let dd = String(currentDate.getDate()).padStart(2, '0');
   let formattedDate = `${yyyy}-${mm}-${dd}`;
-  // create a new document using answer model
+
   let id = await Answers.countDocuments();
   let questionId = req.params.questionId;
   let body = req.body.body;
@@ -32,7 +31,7 @@ postAnswerRouter.post('/qa/:questionId/answers', async(req, res) => {
     helpful: helpful,
     images: images
   });
-  // save new document to collection
+ 
   try {
     await answer.save();
     res.send('Answer submitted');
