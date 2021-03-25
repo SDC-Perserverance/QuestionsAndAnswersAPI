@@ -5,8 +5,7 @@ const answersSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  // Change me to questionId once db gets fixed <----BUG
-  productId: {
+  questionId: {
     type: Number,
     required: true
   },

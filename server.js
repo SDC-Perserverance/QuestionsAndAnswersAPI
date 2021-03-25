@@ -15,7 +15,7 @@ const reportARouter = require('./Routes/ReportAnswer.js');
 // Server config
 const QnA =  express();
 const PORT = 3015;
-const url = 'mongodb://localhost/SDCdb';
+const url = 'mongodb://localhost/SDC';
 
 QnA.use(bodyParser.json());
 // Allow server to use the various routes

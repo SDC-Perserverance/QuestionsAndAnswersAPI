@@ -21,8 +21,7 @@ postAnswerRouter.post('/qa/:questionId/answers', async(req, res) => {
 
   const answer = new Answers({
     id: id,
-    // BUG IS FOUND HERE AGAIN REMEMBER TO CHANGE TO QUESTION ID ONCE FIXED
-    productId: questionId,
+    questionId: questionId,
     body: body,
     dateWritten: dateWritten,
     answererName: answererName,
@@ -31,7 +30,7 @@ postAnswerRouter.post('/qa/:questionId/answers', async(req, res) => {
     helpful: helpful,
     images: images
   });
- 
+
   try {
     await answer.save();
     res.send('Answer submitted');
