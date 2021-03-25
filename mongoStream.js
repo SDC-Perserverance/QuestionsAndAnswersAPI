@@ -12,7 +12,7 @@ MongoClient.connect(url, (err, db) => {
     throw err
   }
 
-  let dbo = db.db('SDCdb');
+  let dbo = db.db('SDC');
 
   let parser = parse({
     delimiter: ',',
@@ -32,22 +32,16 @@ MongoClient.connect(url, (err, db) => {
 
 
   const stream1 = fs.createReadStream('./data/answers_photos.csv').pipe(parser).pipe(transformer);
-
+  // This version of the stream reads from answers_photos and updates the Answers collection with images
   stream1
     .on('data', (chunk) => {
       let answerId = chunk.answerId;
-      dbo.collection('Answers').update({ id: answerId }, { '$push' : {images: chunk}});
-      console.log('Image inserted: ', chunk);
+      dbo.collection('Answers').findOneAndUpdate({ id: answerId }, { '$push' : { images: chunk }});
     })
     .on('end', ()=>{
       console.log('Data has been loaded!')
     });
 })
 
-/*
-Image inserted:  {
-  id: 1466790,
-  answerId: 4894447,
-  url: 'https://images.unsplash.com/photo-1530821875964-91927b611bad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80'
-}
-*/
+
+

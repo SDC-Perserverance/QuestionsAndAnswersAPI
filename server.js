@@ -38,11 +38,6 @@ connection.on('open', () => {
   console.log('Connection established...')
 });
 
-
-
-
-
-
 QnA.get('/', (req, res) => {
   res.send('Welcome to QnA express server');
 });
@@ -50,16 +45,6 @@ QnA.get('/', (req, res) => {
 QnA.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
 });
-
-
-
-
-
-
-
-
-
-
 
 // httperf artillery jmeter for stress testing for local host testing
 
