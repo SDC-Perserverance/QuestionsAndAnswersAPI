@@ -6,6 +6,7 @@ mongoose.set('useFindAndModify', false)
 
 reportQRouter.put('/qa/question/:questionId/report', async (req, res) => {
   let questionId = parseInt(req.params.questionId);
+
   let query = { id: questionId };
 
   try {

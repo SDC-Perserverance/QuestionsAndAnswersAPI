@@ -46,6 +46,4 @@ QnA.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
 });
 
-// httperf artillery jmeter for stress testing for local host testing
-
 // loaderio floodio for cloud testing

@@ -29,7 +29,7 @@ postQuestionRouter.post('/qa/:productId', async(req, res) => {
     reports: reports,
     helpful: helpful
   });
-  
+
   try {
     await question.save();
     res.send('Question submitted!');

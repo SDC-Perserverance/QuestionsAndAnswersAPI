@@ -32,6 +32,10 @@ const answersSchema = new mongoose.Schema({
   helpful: {
     type: Number,
     required: true
+  },
+  images: {
+    type: Array,
+    required: true
   }
 }, { collection: 'Answers' });
 
